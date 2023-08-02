@@ -1,12 +1,10 @@
 "use strict";
-function kgToLbs(weight) {
-    if (typeof weight === "number") {
-        return weight * 2.2;
-    }
-    else {
-        return parseInt(weight) * 2.2;
-    }
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log("hola");
 }
-kgToLbs(10);
-kgToLbs("10kg");
+greet(undefined);
+greet(null);
 //# sourceMappingURL=index.js.map
