@@ -6,5 +6,5 @@ let employee = {
     },
 };
 employee.name = "mila";
-console.log(employee.func);
+console.log(employee);
 //# sourceMappingURL=index.js.map
