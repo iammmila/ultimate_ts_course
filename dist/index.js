@@ -1,5 +1,9 @@
 "use strict";
-let age = 15;
-if (age < 50)
-    age += 10;
+var Size;
+(function (Size) {
+    Size["Small"] = "s";
+    Size["medium"] = "m";
+})(Size || (Size = {}));
+let mySize = Size.Small;
+console.log(mySize);
 //# sourceMappingURL=index.js.map
