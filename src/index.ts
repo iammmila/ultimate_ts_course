@@ -1,10 +1,7 @@
-// const Small = "s";
-// const medium = "m";
-
-enum Size {
-  Small = "s",
-  medium = "m",
+function calculateTax(income: number, taxYear = 2022): number {
+  if ((taxYear || 2022) < 2022) {
+    return income * 1.2;
+  }
+  return income * 1.3;
 }
-let mySize: Size = Size.Small;
-
-console.log(mySize);
+calculateTax(10_000);

@@ -1,9 +1,9 @@
 "use strict";
-var Size;
-(function (Size) {
-    Size["Small"] = "s";
-    Size["medium"] = "m";
-})(Size || (Size = {}));
-let mySize = Size.Small;
-console.log(mySize);
+function calculateTax(income, taxYear = 2022) {
+    if ((taxYear || 2022) < 2022) {
+        return income * 1.2;
+    }
+    return income * 1.3;
+}
+calculateTax(10000);
 //# sourceMappingURL=index.js.map
