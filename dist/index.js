@@ -1,6 +1,6 @@
 "use strict";
-let speed = null;
-let ride = {
-    speed: speed !== null && speed !== void 0 ? speed : 30,
-};
+let phone = document.getElementById("phone");
+phone.value;
+let bag = document.getElementById("bag");
+bag.value;
 //# sourceMappingURL=index.js.map
