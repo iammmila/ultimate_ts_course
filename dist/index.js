@@ -1,6 +1,14 @@
 "use strict";
-let phone = document.getElementById("phone");
-phone.value;
-let bag = document.getElementById("bag");
-bag.value;
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("invalid amount");
+        this.balance += amount;
+    }
+}
 //# sourceMappingURL=index.js.map
