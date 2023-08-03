@@ -12,3 +12,6 @@ class Account {
     this.balance += amount;
   }
 }
+let account = new Account(1, "mila", 0);
+account.deposit(100);
+console.log(typeof account);
