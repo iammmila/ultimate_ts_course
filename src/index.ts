@@ -10,10 +10,15 @@ class Account {
     // Record a transaction
     this._balance += amount;
   }
-  private calculateTax() {}
-  getBalance(): number {
+  // private calculateTax() {}
+  get balance(): number {
     return this._balance;
   }
+  // set balance(value:ts number) {
+  //   if (value < 0) throw new Error("invalid value");
+  //   this._balance = value;
+  // }
 }
 let account = new Account(1, "mila", 0);
-console.log(account.getBalance());
+console.log(account.balance);
+// account.balance = 1;
