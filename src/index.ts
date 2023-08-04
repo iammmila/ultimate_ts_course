@@ -1,24 +1,21 @@
-class Account {
-  nickname?: string;
-  constructor(
-    public readonly id: number,
-    public owner: string,
-    private _balance: number
-  ) {}
-  deposit(amount: number): void {
-    if (amount <= 0) throw new Error("invalid amount");
-    // Record a transaction
-    this._balance += amount;
+class Ride {
+  // passenger
+  // pickuplocation
+  private static _activeRides: number = 0;
+  start() {
+    Ride._activeRides++;
   }
-  // private calculateTax() {}
-  get balance(): number {
-    return this._balance;
+  stop() {
+    Ride._activeRides--;
   }
-  // set balance(value:ts number) {
-  //   if (value < 0) throw new Error("invalid value");
-  //   this._balance = value;
-  // }
+  static get activeRides() {
+    return Ride._activeRides;
+  }
 }
-let account = new Account(1, "mila", 0);
-console.log(account.balance);
-// account.balance = 1;
+
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+ride2.start();
+
+console.log(Ride.activeRides);
