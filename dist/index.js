@@ -1,10 +1,4 @@
 "use strict";
-let level;
-level = 1;
-level = "2";
-function render(document) {
-    console.log(document);
-}
-function render1(document) {
-    console.log(document);
-}
+let numbers = [1, 2, 3, 4, 5, 6];
+let numbers2 = [];
+let numbers3 = [];
