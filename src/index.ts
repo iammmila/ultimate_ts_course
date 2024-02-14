@@ -1,20 +1,10 @@
-// const small = 1;
-// const medium = 2;
-// const large = 3;
-
-enum Size {
-  Small = 1,
-  Medium,
-  Large,
-}
-let mySize = Size.Medium;
-
-//if we write const keyword , code will be more optimized code;
-const enum Size2 {
-  Small = "small",
-  Medium = "medium",
-  Large = "large",
-}
-let mySize2 = Size2.Medium;
-
-console.log(mySize);
+let employee: {
+  readonly id: number;
+  name?: string;
+  retire: (date: Date) => void;
+} = {
+  id: 1,
+  retire: (date: Date) => console.log(date),
+};
+// in readonly mode we cannot change the value;
+//void = dont return anythings 
