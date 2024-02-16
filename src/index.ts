@@ -1,5 +1,5 @@
-let speed: number | null = null;
-let ride = {
-  //nullish coalescing operator
-  speed: speed ?? 30,
-};
+let phone = document.getElementById("phone") as HTMLInputElement;
+let phone2 = <HTMLInputElement>document.getElementById("phone");
+//type assertions
+phone.value;
+phone2.value;
