@@ -1,5 +1,12 @@
 "use strict";
-let phone = document.getElementById("phone");
-let phone2 = document.getElementById("phone");
-phone.value;
-phone2.value;
+let users = [
+    {
+        name: "John Smith",
+        age: 30,
+        occupation: "Software engineer",
+    },
+    {
+        name: "Kate Müller",
+        age: 28,
+    },
+];
