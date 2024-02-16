@@ -1,13 +1,14 @@
-function greet(name: string) {
-  console.log(name.toUpperCase());
-}
-// Argument of type 'null' is not assignable to parameter of type 'string'.:
-// greet(null);
-// if we change in tsconfig to checking null, we dont find any error; (but we never change true to false.!)
+type Customer = {
+  birthday: Date;
+};
 
-function greet1(name: string | null | undefined) {
-  if (name) console.log(name.toUpperCase());
-  else console.log("hola!");
+function getCustomer(id: number): Customer | null {
+  return id === 0 ? null : { birthday: new Date() };
 }
 
-greet1(undefined);
+let customer = getCustomer(1);
+//optional property access operator
+console.log(customer?.birthday?.getFullYear());
+
+//optional element access operator
+// customer?.[0];
