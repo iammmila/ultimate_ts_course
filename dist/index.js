@@ -1,5 +1,2 @@
 "use strict";
-let textBox = {
-    drag: () => { },
-    resize: () => { },
-};
+let quantity = 50;
