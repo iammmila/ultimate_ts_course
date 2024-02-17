@@ -1,7 +1,28 @@
 "use strict";
-var _a;
-function fetch(url) {
-    return { data: null, error: null };
+function echo1(value) {
+    return value;
 }
-let result = fetch("url");
-(_a = result.data) === null || _a === void 0 ? void 0 : _a.username;
+echo1(true);
+function echo2(value) {
+    return value;
+}
+echo2(33);
+function echo3(value) {
+    return value;
+}
+echo3({ name: "fsdjsd" });
+function echo4(value) {
+    return value;
+}
+echo4({ name: "jdjjd" });
+class Product {
+    constructor(title) {
+        this.title = title;
+    }
+}
+class Egg extends Product {
+}
+function echo5(value) {
+    return value;
+}
+echo5(new Egg("skdck"));

@@ -1,23 +1,39 @@
-//https://mywebapp.com/api/users
-//https://mywebapp.com/api/products
-//if we want to fetch this api endpoints:
-
-interface Result<T> {
-  data: T | null;
-  error: string | null;
+function echo1<T>(value: T): T {
+  return value;
 }
 
-function fetch<T>(url: string): Result<T> {
-  return { data: null, error: null };
+echo1(true); // we can write in here what we want
+////////////////////////////////////////////////////////////////
+function echo2<T extends number | string>(value: T): T {
+  return value;
 }
 
-interface User {
-  username: string;
+echo2(33); //we can write only number or string
+////////////////////////////////////////////////////////////////
+function echo3<T extends { name: string }>(value: T): T {
+  return value;
 }
 
-interface Product {
-  title: string;
+echo3({ name: "fsdjsd" });
+////////////////////////////////////////////////////////////////
+interface Person {
+  name: string;
 }
 
-let result = fetch<User>("url");
-result.data?.username;
+function echo4<T extends Person>(value: T): T {
+  return value;
+}
+
+echo4({ name: "jdjjd" });
+////////////////////////////////////////////////////////////////
+class Product {
+  constructor(public title: string) {}
+}
+
+class Egg extends Product {}
+
+function echo5<T extends Product>(value: T): T {
+  return value;
+}
+
+echo5(new Egg("skdck"));
