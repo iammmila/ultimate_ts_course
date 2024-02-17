@@ -20,6 +20,13 @@ class Student extends Person {
   }
 }
 
+class Teacher extends Person {
+  //after changing in the tsconfig file, override is checked.
+  override get fullName(): string {
+    return "Professor " + super.fullName;
+  }
+}
+
 let student1 = new Student(1, "Mila", "Ibrahimova");
-console.log(student1);
-console.log(student1.fullName);
+let teacher1 = new Teacher("Malahat", "brhm");
+console.log(teacher1.fullName);

@@ -20,6 +20,11 @@ class Student extends Person {
         console.log("tkaing test");
     }
 }
+class Teacher extends Person {
+    get fullName() {
+        return "Professor " + super.fullName;
+    }
+}
 let student1 = new Student(1, "Mila", "Ibrahimova");
-console.log(student1);
-console.log(student1.fullName);
+let teacher1 = new Teacher("Malahat", "brhm");
+console.log(teacher1.fullName);
