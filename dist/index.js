@@ -10,8 +10,14 @@ class Account {
             throw new Error("invalid balance");
         this._balance += amount;
     }
-    getBalance() {
+    get balance() {
         return this._balance;
+    }
+    set balance(value) {
+        if (value < 0)
+            throw new Error("invalid value");
+        this._balance = value;
     }
 }
 let account1 = new Account(1, "Mila", 0);
+console.log(account1.balance);

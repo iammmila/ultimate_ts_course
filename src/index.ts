@@ -11,9 +11,19 @@ class Account {
     if (amount <= 0) throw new Error("invalid balance");
     this._balance += amount;
   }
-  getBalance(): number {
+
+  //getter
+  get balance(): number {
     return this._balance;
+  }
+
+  //setter
+  set balance(value: number) {
+    if (value < 0) throw new Error("invalid value");
+    this._balance = value;
   }
 }
 
 let account1 = new Account(1, "Mila", 0);
+console.log(account1.balance);
+// account1.balance = 0; //if we dont write setter then we get an error
