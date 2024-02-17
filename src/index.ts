@@ -26,7 +26,21 @@ class Teacher extends Person {
     return "Professor " + super.fullName;
   }
 }
+class Principal extends Person {
+  //after changing in the tsconfig file, override is checked.
+  override get fullName(): string {
+    return "Principal " + super.fullName;
+  }
+}
 
-let student1 = new Student(1, "Mila", "Ibrahimova");
-let teacher1 = new Teacher("Malahat", "brhm");
-console.log(teacher1.fullName);
+printNames([
+  new Student(1, "mina", "ibrh"),
+  new Teacher("mila", "brhm"),
+  new Principal("mosh", "nago"),
+]);
+
+function printNames(people: Person[]) {
+  for (let person of people) {
+    console.log(person.fullName);
+  }
+}
