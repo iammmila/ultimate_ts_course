@@ -1,9 +1,9 @@
 "use strict";
 class Account {
-    constructor(id, owner, balance) {
+    constructor(id, owner, _balance) {
         this.id = id;
         this.owner = owner;
-        this._balance = balance;
+        this._balance = _balance;
     }
     deposit(amount) {
         if (amount <= 0)
@@ -15,5 +15,3 @@ class Account {
     }
 }
 let account1 = new Account(1, "Mila", 0);
-console.log(account1.nickname);
-console.log(account1.getBalance());

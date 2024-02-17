@@ -1,14 +1,11 @@
 class Account {
-  readonly id: number; // * readonly - we cannot change this id
-  owner: string;
-  private _balance: number;
-  nickname?: string; // * optional properties
+  nickname?: string;
 
-  constructor(id: number, owner: string, balance: number) {
-    this.id = id;
-    this.owner = owner;
-    this._balance = balance;
-  }
+  constructor(
+    public readonly id: number,
+    public owner: string,
+    private _balance: number
+  ) {}
 
   deposit(amount: number): void {
     if (amount <= 0) throw new Error("invalid balance");
@@ -20,5 +17,3 @@ class Account {
 }
 
 let account1 = new Account(1, "Mila", 0);
-console.log(account1.nickname); //undefined
-console.log(account1.getBalance()); // 0
