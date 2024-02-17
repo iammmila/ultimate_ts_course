@@ -1,12 +1,13 @@
 "use strict";
-let users = [
-    {
-        name: "John Smith",
-        age: 30,
-        occupation: "Software engineer",
-    },
-    {
-        name: "Kate Müller",
-        age: 28,
-    },
-];
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("invalid balance");
+        this.balance += amount;
+    }
+}
