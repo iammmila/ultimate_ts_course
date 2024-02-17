@@ -1,7 +1,23 @@
-class KeyValuePair<K, V> {
-  //K = key, V = value; or we can also write: TValue, Kvalue, what you want
-  constructor(public key: K, public value: V) {}
+function wrapInArray<T>(value: T) {
+  return [value];
+}
+let members = wrapInArray(1);
+
+//also we can write this in a class:
+class ArrayUtils {
+  wrapInArray2<T>(value: T) {
+    return [value];
+  }
 }
 
-let pair = new KeyValuePair<number, string>(1, "sdkd");
-pair.key.toFixed(2);
+let utils = new ArrayUtils();
+let members2 = utils.wrapInArray2(1);
+
+//and if we write static methods:
+class ArrayUtils2 {
+  static wrapInArray2<T>(value: T) {
+    return [value];
+  }
+}
+
+let numbers = ArrayUtils2.wrapInArray2(1);
