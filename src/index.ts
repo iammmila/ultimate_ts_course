@@ -1,39 +1,33 @@
-function echo1<T>(value: T): T {
-  return value;
-}
-
-echo1(true); // we can write in here what we want
-////////////////////////////////////////////////////////////////
-function echo2<T extends number | string>(value: T): T {
-  return value;
-}
-
-echo2(33); //we can write only number or string
-////////////////////////////////////////////////////////////////
-function echo3<T extends { name: string }>(value: T): T {
-  return value;
-}
-
-echo3({ name: "fsdjsd" });
-////////////////////////////////////////////////////////////////
-interface Person {
+interface Product {
   name: string;
+  price: number;
 }
 
-function echo4<T extends Person>(value: T): T {
-  return value;
+class Store<T> {
+  protected _objects: T[] = [];
+
+  add(obj: T): void {
+    this._objects.push(obj);
+  }
 }
 
-echo4({ name: "jdjjd" });
-////////////////////////////////////////////////////////////////
-class Product {
-  constructor(public title: string) {}
+class CompressibleStore<T> extends Store<T> {
+  compress() {}
 }
 
-class Egg extends Product {}
+let store = new CompressibleStore<Product>();
+store.compress();
 
-function echo5<T extends Product>(value: T): T {
-  return value;
+//restrict the generic type parameter
+class SearchableStore<T extends { name: string }> extends Store<T> {
+  find(name: string): T | undefined {
+    return this._objects.find((obj) => obj.name === name);
+  }
 }
 
-echo5(new Egg("skdck"));
+//fix the generic type parameter
+class ProductStore extends Store<Product> {
+  filterByCategory(category: string): Product[] {
+    return [];
+  }
+}

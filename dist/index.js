@@ -1,28 +1,24 @@
 "use strict";
-function echo1(value) {
-    return value;
-}
-echo1(true);
-function echo2(value) {
-    return value;
-}
-echo2(33);
-function echo3(value) {
-    return value;
-}
-echo3({ name: "fsdjsd" });
-function echo4(value) {
-    return value;
-}
-echo4({ name: "jdjjd" });
-class Product {
-    constructor(title) {
-        this.title = title;
+class Store {
+    constructor() {
+        this._objects = [];
+    }
+    add(obj) {
+        this._objects.push(obj);
     }
 }
-class Egg extends Product {
+class CompressibleStore extends Store {
+    compress() { }
 }
-function echo5(value) {
-    return value;
+let store = new CompressibleStore();
+store.compress();
+class SearchableStore extends Store {
+    find(name) {
+        return this._objects.find((obj) => obj.name === name);
+    }
 }
-echo5(new Egg("skdck"));
+class ProductStore extends Store {
+    filterByCategory(category) {
+        return [];
+    }
+}
