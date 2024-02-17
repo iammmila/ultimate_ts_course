@@ -1,9 +1,10 @@
 "use strict";
-let product = {
-    name: "aa",
-    price: 1,
-};
-let product2 = {
-    name: "a",
-    price: 1,
-};
+function echo(arg) {
+    return arg;
+}
+function printName(obj) {
+    console.log(obj.name);
+}
+class Entity {
+    constructor(id) { }
+}
