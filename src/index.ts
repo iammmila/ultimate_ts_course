@@ -1,13 +1,7 @@
-class KeyValuePair {
-  constructor(public key: number, public value: string) {}
+class KeyValuePair<K, V> {
+  //K = key, V = value; or we can also write: TValue, Kvalue, what you want
+  constructor(public key: K, public value: V) {}
 }
 
-let pair = new KeyValuePair(1, "value");
-// when key is string, we can access easily methods when we write : pair.key.
-// but when our number is any type, we can not accces any methods or properties.
-
-// also it can be that key can be number or string, in this case, we must create new class:
-class StringKeyValuePair {
-  constructor(public key: string, public value: string) {}
-}
-let pair2 = new StringKeyValuePair("sjjs", "sdknv");
+let pair = new KeyValuePair<number, string>(1, "sdkd");
+pair.key.toFixed(2);
