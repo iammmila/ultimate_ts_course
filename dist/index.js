@@ -1,12 +1,22 @@
 "use strict";
-class GoodleCalendar {
-    constructor(name) {
-        this.name = name;
+class Logger {
+    constructor(fileName) {
+        this.fileName = fileName;
     }
-    addEvent() {
-        throw new Error("Not implemented");
+    log(message) { }
+}
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    removeEvent() {
-        throw new Error("Not implemented");
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+class Employee extends Person {
+    constructor(salary, firstName, lastName) {
+        super(firstName, lastName);
+        this.salary = salary;
     }
 }
