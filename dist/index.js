@@ -17,6 +17,7 @@ class Student extends Person {
         this.StudentId = StudentId;
     }
     takeTest() {
+        this.walk();
         console.log("tkaing test");
     }
 }

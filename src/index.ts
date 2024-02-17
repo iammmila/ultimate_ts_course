@@ -4,8 +4,9 @@ class Person {
   get fullName(): string {
     return this.firstName + " " + this.lastName;
   }
-
-  walk() {
+    //if we write private, we canot call anywhere in the outside
+    // but if we write protected, we can call in child class.
+  protected walk() {
     console.log("walking");
   }
 }
@@ -16,6 +17,7 @@ class Student extends Person {
   }
 
   takeTest() {
+    this.walk();
     console.log("tkaing test");
   }
 }
