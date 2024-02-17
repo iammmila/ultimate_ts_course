@@ -1,18 +1,7 @@
 "use strict";
-function wrapInArray(value) {
-    return [value];
+var _a;
+function fetch(url) {
+    return { data: null, error: null };
 }
-let members = wrapInArray(1);
-class ArrayUtils {
-    wrapInArray2(value) {
-        return [value];
-    }
-}
-let utils = new ArrayUtils();
-let members2 = utils.wrapInArray2(1);
-class ArrayUtils2 {
-    static wrapInArray2(value) {
-        return [value];
-    }
-}
-let numbers = ArrayUtils2.wrapInArray2(1);
+let result = fetch("url");
+(_a = result.data) === null || _a === void 0 ? void 0 : _a.username;

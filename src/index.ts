@@ -1,23 +1,23 @@
-function wrapInArray<T>(value: T) {
-  return [value];
-}
-let members = wrapInArray(1);
+//https://mywebapp.com/api/users
+//https://mywebapp.com/api/products
+//if we want to fetch this api endpoints:
 
-//also we can write this in a class:
-class ArrayUtils {
-  wrapInArray2<T>(value: T) {
-    return [value];
-  }
+interface Result<T> {
+  data: T | null;
+  error: string | null;
 }
 
-let utils = new ArrayUtils();
-let members2 = utils.wrapInArray2(1);
-
-//and if we write static methods:
-class ArrayUtils2 {
-  static wrapInArray2<T>(value: T) {
-    return [value];
-  }
+function fetch<T>(url: string): Result<T> {
+  return { data: null, error: null };
 }
 
-let numbers = ArrayUtils2.wrapInArray2(1);
+interface User {
+  username: string;
+}
+
+interface Product {
+  title: string;
+}
+
+let result = fetch<User>("url");
+result.data?.username;
