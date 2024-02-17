@@ -1,22 +1,15 @@
 "use strict";
-class Logger {
-    constructor(fileName) {
-        this.fileName = fileName;
-    }
-    log(message) { }
-}
-class Person {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+class KeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
-class Employee extends Person {
-    constructor(salary, firstName, lastName) {
-        super(firstName, lastName);
-        this.salary = salary;
+let pair = new KeyValuePair(1, "value");
+class StringKeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
+let pair2 = new StringKeyValuePair("sjjs", "sdknv");
