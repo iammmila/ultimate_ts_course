@@ -3,23 +3,31 @@ interface Product {
   price: number;
 }
 
-class Store<T> {
-  protected _objects: T[] = [];
+type ReadOnlyProduct = {
+  readonly [K in keyof Product]: Product[K];
+};
 
-  add(obj: T): void {
-    this._objects.push(obj);
-  }
+let product: ReadOnlyProduct = {
+  name: "aa",
+  price: 1,
+};
 
-  // T is Product
-  //keyof T ==> 'name' | 'price
-  find(property: keyof T, value: unknown): T | undefined {
-    return this._objects.find((obj) => obj[property] === value);
-  }
+////////////////////////////////////////////////////////////////
+type ReadOnly<T> = {
+  readonly [K in keyof T]: T[K];
+};
+
+let product2: ReadOnly<Product> = {
+  name: "a",
+  price: 1,
+};
+
+////////////////////////////////////////////////////////////////
+type Optional<T> = {
+[K in keyof T]?: T[K];
 }
 
-let store = new Store<Product>();
-store.add({ name: "a", price: 1 });
-store.find("name", "a");
-store.find("price", 1);
-// store.find("nonExistingProperty", 1); //! if we write non existing properties we can catch issue at compile time
-
+////////////////////////////////////////////////////////////////
+type Nullable<T> = {
+  [K in keyof T]: T[K] |null;
+}
