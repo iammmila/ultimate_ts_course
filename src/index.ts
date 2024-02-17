@@ -1,48 +1,18 @@
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+abstract class Shape {
+  constructor(public color: string) {}
 
-  get fullName(): string {
-    return this.firstName + " " + this.lastName;
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
   }
-    //if we write private, we canot call anywhere in the outside
-    // but if we write protected, we can call in child class.
-  protected walk() {
-    console.log("walking");
+
+  override render(): void {
+    console.log("rendering a circle...");
   }
 }
 
-class Student extends Person {
-  constructor(public StudentId: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
-  }
-
-  takeTest() {
-    this.walk();
-    console.log("tkaing test");
-  }
-}
-
-class Teacher extends Person {
-  //after changing in the tsconfig file, override is checked.
-  override get fullName(): string {
-    return "Professor " + super.fullName;
-  }
-}
-class Principal extends Person {
-  //after changing in the tsconfig file, override is checked.
-  override get fullName(): string {
-    return "Principal " + super.fullName;
-  }
-}
-
-printNames([
-  new Student(1, "mina", "ibrh"),
-  new Teacher("mila", "brhm"),
-  new Principal("mosh", "nago"),
-]);
-
-function printNames(people: Person[]) {
-  for (let person of people) {
-    console.log(person.fullName);
-  }
-}
+let shape = new Circle(1, "djdj");
+shape.render(); //rendering a circle
