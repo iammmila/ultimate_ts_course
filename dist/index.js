@@ -1,17 +1,12 @@
 "use strict";
-class Shape {
-    constructor(color) {
-        this.color = color;
+class GoodleCalendar {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error("Not implemented");
+    }
+    removeEvent() {
+        throw new Error("Not implemented");
     }
 }
-class Circle extends Shape {
-    constructor(radius, color) {
-        super(color);
-        this.radius = radius;
-    }
-    render() {
-        console.log("rendering a circle...");
-    }
-}
-let shape = new Circle(1, "djdj");
-shape.render();
