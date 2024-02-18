@@ -1,3 +1,1 @@
-import * as Shapes from "./shapes";
-
-let circle = new Shapes.Circle(33);
+import { Circle, Square } from "./shapes";
