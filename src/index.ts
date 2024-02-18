@@ -1,24 +1,31 @@
-function Capitalize(
-  target: any,
-  methodName: string,
-  descriptor: PropertyDescriptor
-) {
-  // const original = descriptor.value //it is not working for getters and setters; it is working for only regular methods;
-  const original = descriptor.get;
-  descriptor.get = function () {
-    const result = original?.call(this); //optional chaining - because of original can be undefined
-    // original!.call(this); //exclamation mark - because we say: hey i know it is not gonna be undefined or null;
-    return typeof result === "string" ? result.toUpperCase() : result;
+function MinLength(length: number) {
+  return (target: any, propertyName: string) => {
+    let value: string;
+
+    const descriptor: PropertyDescriptor = {
+      get() {
+        return value;
+      },
+      set(newValue: string) {
+        if (newValue.length < length)
+          throw new Error(
+            `${propertyName} should be at least ${length} characters long.`
+          );
+        value = newValue;
+      },
+    };
+
+    Object.defineProperty(target, propertyName, descriptor);
   };
 }
 
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
-  @Capitalize
-  get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+class User {
+  @MinLength(4) // 4 means password length  must be 4 characters at least
+  password: string;
+  constructor(password: string) {
+    this.password = password;
   }
 }
 
-let person = new Person("mila", "ibrahimova");
-console.log(person.fullName);
+let user = new User("1345");
+console.log(user.password);
