@@ -1,22 +1,13 @@
-type WatchedParameters = {
-  methodName: string;
-  parameterIndex: number;
-};
+// Create a decorator for adding a sauce to Pizza instances:
+// @Sauce('pesto')
+// class Pizza {}
 
-const watchedParameters: WatchedParameters[] = [];
+// In the above example, all instances of the Pizza class should have a sauce property set to pesto.
 
-function Watch(target: any, methodName: string, parameterIndex: number) {
-  watchedParameters.push({
-    methodName,
-    parameterIndex,
-  });
+function Sauce(sauce: string) {
+  return (constructor: Function) => {
+    constructor.prototype.sauce = sauce;
+  };
 }
-
-class Vehicle {
-  move(@Watch speed: number) {}
-}
-
-console.log(watchedParameters);
-
-//!output:
-// [{ methodName: "move", parameterIndex: 0 }];
+@Sauce("pesto")
+class Pizza {}
