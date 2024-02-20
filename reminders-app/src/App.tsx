@@ -15,9 +15,14 @@ function App() {
     const data = await reminderService.getReminders();
     setReminders(data);
   };
+
+  const removeReminder = (id: number) => {
+    setReminders(reminders.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="App">
-      <ReminderList items={reminders} />
+      <ReminderList items={reminders} onRemoveReminder={removeReminder} />
     </div>
   );
 }
