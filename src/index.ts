@@ -1,5 +1,4 @@
 import { calculateTax } from "./tax.js";
 
-let tax = calculateTax(1000);
+let tax = calculateTax(); // if we dont write anything in the function, there is output: NaN; solve this problem with tsconfig.json
 console.log(tax);
-//if again there is an error, just in tsconfig file we configure the module to commonjs. solves.
