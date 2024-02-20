@@ -1,4 +1,8 @@
-import { calculateTax } from "./tax.js";
+import * as _ from "lodash";
 
-let tax = calculateTax(1000);
-console.log(tax);
+_.clone([1, 2, 3]);
+
+//! npm i lodash //if it is not working , install:
+//! npm i --save-dev @types/lodash; or; npm i -D @types/lodash
+
+//! or; npm i chalk
