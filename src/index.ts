@@ -1,4 +1,4 @@
 import { calculateTax } from "./tax.js";
 
-let tax = calculateTax(); // if we dont write anything in the function, there is output: NaN; solve this problem with tsconfig.json
+let tax = calculateTax(1000);
 console.log(tax);
