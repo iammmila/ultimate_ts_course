@@ -1,7 +1,5 @@
-var x = 10;
-console.log(x);
-//firstly we write in cmd: npm init -y
-// then: npm i -D ts-node
-//then we configure in the package.json : start: ts-node index.ts
-// now in terminal we can write : npm start;
-// after this we can see our result in termainl;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var app = (0, express_1.default)();
+app.listen(8000, function () { return console.log("Server Starts..."); });
